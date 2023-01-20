@@ -1,7 +1,5 @@
 package com.mjc.stage2.entity;
 
-import javax.print.DocFlavor;
-
 public class SymbolLeaf extends AbstractTextComponent{
 
     private char value;

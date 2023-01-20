@@ -11,15 +11,15 @@ public class RectangleObserver  implements Observer {
     @Override
     public void handleEvent(RectangleEvent event) {
         Rectangle rectangle = event.getSource();
-        double sideA = rectangle.getSideA();
-        double sideB = rectangle.getSideB();
-        double square = sideA * sideB;
-        double perimeter = 2 * (sideA + sideB);
 
         RectangleValues rectangleValues = RectangleWarehouse.getInstance().get(rectangle.getId());
         if (rectangleValues != null){
-            rectangleValues.setPerimeter(perimeter);
-            rectangleValues.setSquare(square);
+            rectangleValues.setPerimeter(
+                    2 * (rectangle.getSideA() + rectangle.getSideB())
+            );
+            rectangleValues.setSquare(
+                    rectangle.getSideA() * rectangle.getSideB()
+            );
         }
         RectangleWarehouse.getInstance().put(rectangle.getId(), rectangleValues);
     }

@@ -3,7 +3,6 @@ package com.mjc.stage2.entity;
 import com.mjc.stage2.Observable;
 import com.mjc.stage2.Observer;
 import com.mjc.stage2.event.RectangleEvent;
-import com.mjc.stage2.impl.RectangleObserver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +42,7 @@ public class Rectangle implements Observable {
 
     public void setSideB(double sideB) {
         this.sideB = sideB;
-
+        notifyObserver();
     }
 
     @Override
